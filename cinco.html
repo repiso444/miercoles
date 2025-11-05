@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posicionamiento en CSS</title>
+  <style>
+    /* Estático: posición por defecto, sigue el flujo normal del documento */
+    .static {
+      position: static;
+      background-color: lightgray;
+    }
+
+    /* Relativo: se posiciona relativo a su posición original */
+    .relative {
+      position: relative;
+      top: 20px;  /* Desplaza el elemento 20px hacia abajo desde su posición original */
+      left: 10px;  /* Desplaza el elemento 10px hacia la derecha desde su posición original */
+      background-color: lightcoral;
+    }
+
+    /* Absoluto: se posiciona relativo al contenedor posicionado más cercano */
+    .absolute {
+      position: absolute;
+      top: 1000px;  /* Desplaza el elemento 50px desde la parte superior del contenedor posicionado */
+      right: 20px;  /* Desplaza el elemento 20px desde la parte derecha del contenedor posicionado */
+      background-color: lightgreen;
+    }
+
+    /* Fijo: se posiciona relativo a la ventana del navegador y no se desplaza con el scroll */
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;  /* Ancho del 100% de la ventana */
+      background-color: yellow;
+    }
+
+    /* Pegajoso: se comporta como relativo hasta que se cruza un umbral, luego se fija */
+    .sticky {
+      position: -webkit-sticky;  /* Soporte para navegadores basados en WebKit */
+      position: sticky;
+      top: 0;  /* Se fija en la parte superior cuando se cruza ese punto */
+      background-color: lightblue;
+    }
+
+    /* Contenedor: utilizado para contener los elementos absolutos y relativos */
+    .container {
+      position: relative;  /* Establece un contexto de posicionamiento para elementos hijos absolutos */
+      height: 200px;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+  <div class="fixed">Elemento Fixed (Fijo)</div>
+  
+  <div class="container">
+    <div class="absolute">Elemento Absolute (Absoluto)</div>
+    <p class="static">Elemento Static (Estático)</p>
+    <p class="relative">Elemento Relative (Relativo)</p>
+    <p class="sticky">Elemento Sticky (Pegajoso)</p>
+  </div>
+</body>
+</html>
